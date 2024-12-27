@@ -44,6 +44,7 @@ def GrabItems(player_inventory):
 
 def DropItem(player_inventory):
  while True:
+  try:  
     user_number = int(input("Number for item to delete: "))
     if user_number < 1 or user_number > len(player_inventory):
        print("Invaild number for item in inventory")
@@ -52,4 +53,6 @@ def DropItem(player_inventory):
         item = player_inventory.pop(user_number-1)
         print(f"{item} was dropped from the inventory.")
         break
+  except ValueError:
+     print("enter a vaild number in inventory")
 main()
