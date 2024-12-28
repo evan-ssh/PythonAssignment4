@@ -2,6 +2,8 @@ def main():
     quarter_sales = []
     GetSales(quarter_sales)
     CalculateTotal(quarter_sales)
+    GetAverage(quarter_sales)
+    LowestSale(quarter_sales)   
 def GetSales(quarter_sales):
     quarter1 = float(input("Enter sales for Q1: "))
     quarter_sales.append(quarter1)
@@ -21,5 +23,7 @@ def GetAverage(quarter_sales):
     average = sum(quarter_sales) / 4
     print(f"Average of Quarters: {average}")
 
-
+def LowestSale(quarter_sales):
+    low = min(quarter_sales)
+    print(f"Lowest Quarter: {low}")
 main()
