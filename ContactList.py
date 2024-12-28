@@ -4,13 +4,17 @@ def main():
     while True:
      DisplayMenu()
      try:
-        command = int(input("Select a command 1 - 4"))
+        command = int(input("Select a command 1 - 5"))
         if command == 1:
          ShowContact(contacts)
         elif command == 2:
          AddContact(contacts)
         elif command == 3:
          RemoveContacts(contacts)
+        elif command == 4:
+         ViewContact(contacts)
+        elif command == 5:
+         return False
      except ValueError:
         print("Enter a vaild number")
 
@@ -19,6 +23,8 @@ def DisplayMenu():
    print("1 - Show Contacts")
    print("2 - Add Contact")   
    print("3 - Remove a contact")
+   print("4 - View a contact")
+   print("5 - Exit Program")
 
 def ShowContact(contacts):
     for i, contact in enumerate(contacts):
@@ -47,4 +53,17 @@ def RemoveContacts(contacts):
     except ValueError:
        print("Enter a vaild number")
 
+def ViewContact(contacts):
+ while True:
+    try:
+        ShowContact(contacts)
+        user_input = int(input("Enter the number of the contact"))
+        if user_input < 1 or user_input > len(contacts):
+            print("Invaild Contact")
+        else:
+            contact = contacts[user_input - 1]
+            print(f"{contact}")
+            return False
+    except ValueError:
+        print("Enter a vaild number")
 main()
