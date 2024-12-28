@@ -3,7 +3,9 @@ def main():
     GetSales(quarter_sales)
     CalculateTotal(quarter_sales)
     GetAverage(quarter_sales)
-    LowestSale(quarter_sales)   
+    LowestSale(quarter_sales)
+    HighestSale(quarter_sales)   
+    
 def GetSales(quarter_sales):
     quarter1 = float(input("Enter sales for Q1: "))
     quarter_sales.append(quarter1)
@@ -26,4 +28,8 @@ def GetAverage(quarter_sales):
 def LowestSale(quarter_sales):
     low = min(quarter_sales)
     print(f"Lowest Quarter: {low}")
+
+def HighestSale(quarter_sales):
+    high = max(quarter_sales)
+    print(f"Highest Quarter: {high}")
 main()
