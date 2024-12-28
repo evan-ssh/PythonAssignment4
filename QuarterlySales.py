@@ -1,10 +1,15 @@
 def main():
+ while True:
     quarter_sales = []
     GetSales(quarter_sales)
     CalculateTotal(quarter_sales)
     GetAverage(quarter_sales)
     LowestSale(quarter_sales)
     HighestSale(quarter_sales)   
+    go_again = input("Would u like to enter another set of data?(y/n)").lower()
+    if go_again != "y":
+       return False
+
 
 def GetSales(quarter_sales):
     quarter1 = float(input("Enter sales for Q1: "))
