@@ -16,4 +16,10 @@ def GetSales(quarter_sales):
 def CalculateTotal(quarter_sales):
     total = sum(quarter_sales)
     print(f"Total: {total}")
+
+def GetAverage(quarter_sales):
+    average = sum(quarter_sales) / 4
+    print(f"Average of Quarters: {average}")
+
+
 main()
