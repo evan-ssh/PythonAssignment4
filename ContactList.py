@@ -8,7 +8,9 @@ def main():
         if command == 1:
          ShowContact(contacts)
         elif command == 2:
-           AddContact(contacts)
+         AddContact(contacts)
+        elif command == 3:
+         RemoveContacts(contacts)
      except ValueError:
         print("Enter a vaild number")
 
@@ -16,6 +18,7 @@ def DisplayMenu():
    print("COMMAND MENU")
    print("1 - Show Contacts")
    print("2 - Add Contact")   
+   print("3 - Remove a contact")
 
 def ShowContact(contacts):
     for i, contact in enumerate(contacts):
@@ -29,5 +32,19 @@ def AddContact(contacts):
  contacts.append(new_contact)
  print("Contact was added")
 
+def RemoveContacts(contacts):
+ while True:
+    try:
+        ShowContact(contacts)
+        user_input = int(input("Enter number of the contact you'd like to delete"))
+        if user_input < 1 or user_input > len(contacts):
+            print("Invaild contact")
+            continue
+        else: 
+            contact = contacts.pop(user_input - 1)
+            print(f"{contact} was deleted")
+            return False
+    except ValueError:
+       print("Enter a vaild number")
 
 main()
