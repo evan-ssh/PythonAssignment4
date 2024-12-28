@@ -8,19 +8,23 @@ def main():
     HighestSale(quarter_sales)   
     go_again = input("Would u like to enter another set of data?(y/n)").lower()
     if go_again != "y":
-       return False
+     return False
 
 
 def GetSales(quarter_sales):
-    quarter1 = float(input("Enter sales for Q1: "))
-    quarter_sales.append(quarter1)
-    quarter2 = float(input("Enter sales for Q2: "))
-    quarter_sales.append(quarter2)
-    quarter3 = float(input("Enter sales for Q3: "))
-    quarter_sales.append(quarter3)
-    quarter4 = float(input("Enter sales for Q4: "))
-    quarter_sales.append(quarter4)
-    print(quarter_sales)
+ while True:
+    try:
+        quarter1 = float(input("Enter sales for Q1: "))
+        quarter_sales.append(quarter1)
+        quarter2 = float(input("Enter sales for Q2: "))
+        quarter_sales.append(quarter2)
+        quarter3 = float(input("Enter sales for Q3: "))
+        quarter_sales.append(quarter3)
+        quarter4 = float(input("Enter sales for Q4: "))
+        quarter_sales.append(quarter4)
+        break
+    except ValueError:
+       print("Enter a number")
 
 def CalculateTotal(quarter_sales):
     total = sum(quarter_sales)
