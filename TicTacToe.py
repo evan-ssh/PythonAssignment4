@@ -24,3 +24,11 @@ def WinCases(game):
     diags.append(game[i][i])
     if diags.count(diags[0]) == len(diags) and diags[0] != 0:
       print("winner")
+
+  #vert winner
+  for col in range(len(game)):
+    verts  = []
+    for row in game:
+      verts.append(row[col])
+    if verts.count(verts[0]) == len(verts) and verts[0] != 0:
+      print("Winner")
