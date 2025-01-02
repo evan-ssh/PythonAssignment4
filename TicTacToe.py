@@ -2,7 +2,25 @@ def main():
  game = [[0, 0, 0], 
           [0, 0, 0],
           [0, 0, 0]]
- WinCases(game)
+ players = ["1","2"]
+ round = 1
+
+ while True:
+  round += 1
+  if round % 2:
+    print(players[1], "turn")
+    row = int(input("Enter a row"))
+    col = int(input("Enter a col"))
+  else:
+    print(players[0], "turn")
+    row = int(input("Enter a row"))
+    col = int(input("Enter a col"))
+    
+
+ 
+ 
+
+
 def WinCases(game):
     
   # horizontal cases

@@ -57,13 +57,14 @@ def ViewContact(contacts):
  while True:
     try:
         ShowContact(contacts)
-        user_input = int(input("Enter the number of the contact"))
-        if user_input < 1 or user_input > len(contacts):
-            print("Invaild Contact")
-        else:
-            contact = contacts[user_input - 1]
-            print(f"{contact}")
-            return False
+        for contact in contacts:
+            user_input = int(input("Enter the number of the contact"))
+            if user_input < 1 or user_input > len(contacts):
+                print("Invaild Contact")
+            else:
+                contact = contacts[user_input - 1]
+                print(contact)
+                return False
     except ValueError:
         print("Enter a vaild number")
 main()
