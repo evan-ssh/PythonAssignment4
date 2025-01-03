@@ -1,24 +1,30 @@
 def main():
- game = [[0, 0, 0], 
+ board = [[0, 0, 0], 
           [0, 0, 0],
           [0, 0, 0]]
- players = ["1","2"]
+ players = ["X","O"]
  round = 1
 
  while True:
   round += 1
+  ShowBoard(board)
   if round % 2:
     print(players[1], "turn")
-    row = int(input("Enter a row"))
-    col = int(input("Enter a col"))
+    row = int(input("Enter a row: "))
+    col = int(input("Enter a col: "))
+    board[row][col] = players[1] 
   else:
     print(players[0], "turn")
-    row = int(input("Enter a row"))
-    col = int(input("Enter a col"))
-    
+    row = int(input("Enter a row: "))
+    col = int(input("Enter a col: "))
+    board[row][col] = players[1]
 
  
  
+
+def ShowBoard(board):
+ for i, rows in enumerate(board):
+  print(i+1, rows)
 
 
 def WinCases(game):
