@@ -64,9 +64,9 @@ def WinCases(board):
   # horizontal cases
 
   for row in board:
-    print(row)
-    if row.count(row[0] == len(row) and row[0]) != 0:
-      print("Winner!")
+   if row[0] == row[1] == row[2] and row[0] != 0:
+    print(f"{row[0]} is the winner")
+  
 
   #diagonal cases
   diags = []
@@ -82,9 +82,8 @@ def WinCases(board):
       print("winner")
 
   #vert winner
-  for col in range(len(board)):
-    verts  = []
-    for row in board:
-      verts.append(row[col])
-    if verts.count(verts[0]) == len(verts) and verts[0] != 0:
-      print("Winner")
+  for col in range(3):
+    if board[0][col] == board[1][col] == board[2][col] and board[0][col] != 0:
+      print(f"{board[0][col]} is the winner")
+      
+    
