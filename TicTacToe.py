@@ -69,17 +69,12 @@ def WinCases(board):
   
 
   #diagonal cases
-  diags = []
-  for col, row in enumerate(reversed(range(len(board)))):
-    diags.append(board[row][col])
-    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
-       print("winner")
-
-  diags = []
-  for i in range(len(board)):
-    diags.append(board[i][i])
-    if diags.count(diags[0]) == len(diags) and diags[0] != 0:
-      print("winner")
+  for _ in board:
+    if board[2][0] == board[1][1] == board[0][2] and board[2][0] != 0:
+      print(f"{board[[2][0]]}")
+  for _ in board:#top left to bottom right
+    if board[0][0] == board[1][1] == board[2][2] and board[0][0] != 0:
+      print(f"{board[0][0]} is the winner")
 
   #vert winner
   for col in range(3):
